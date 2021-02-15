@@ -27,6 +27,11 @@ body {
     margin-top: 40px;
 }
 
+.nav-bar input,
+.nav-bar span {
+    display: none;
+}
+
 .nav-list {
     list-style: none;
     text-align: center;
@@ -34,7 +39,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     margin: 0 auto;
 }
 
@@ -48,16 +53,88 @@ body {
     border-bottom: 2px solid var(--primary-color);
 }
 
-.nav-list li:hover {
-    background-color: var(--primary-color);
-    border-radius: 3px;
-    cursor: pointer;
-}
-
 .nav-list a {
     text-decoration: none;
     color: var(--font-color);
     font-size: 18px;
+}
+
+@media (min-width: 600px) {
+    .nav-list .active {
+        background-color: var(--secondary-color);
+        border-radius: 9px;
+    }
+    .nav-list .active a {
+        color: var(--tertiary-color);
+    }
+    .nav-list a {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 769px) {
+    .container {
+        display: grid;
+        height: calc(100vh - 80px);
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    .nav-bar input {
+        opacity: 0;
+        display: initial;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 8%;
+        top: 7%;
+        border-radius: 200px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .nav-bar span {
+        position: absolute;
+        display: initial;
+        left: 9%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        transition: .3s all ease-in-out;
+        font-size: 40px;
+        text-align: center;
+        transform: rotate(270deg);
+        color: var(--primary-color);
+        border: 2px solid var(--secondary-color);
+    }
+    .nav-list {
+        margin-top: 120px;
+        grid-template-columns: initial;
+        gap: 35px;
+        transition: .3s all ease-in-out;
+    }
+    .nav-list li,
+    .nav-list a {
+        width: 0;
+        opacity: 0;
+    }
+    .nav-list a {
+        width: 0px;
+    }
+    .nav-bar input:checked~.nav-list a,
+    .nav-bar input:checked~.nav-list li {
+        width: 100%;
+        opacity: 1;
+    }
+    .nav-bar input:checked~span {
+        transform: rotate(90deg);
+        color: var(--font-color);
+    }
+    .nav-bar .nav-list li:hover {
+        background-color: var(--primary-color);
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .nav-list .active {
+        border: none;
+    }
 }
 
 .header {
@@ -79,6 +156,30 @@ body {
 .header h3 {
     font-size: 30px;
     margin-top: 10px;
+}
+
+@media (min-width: 600px) {
+    .header {
+        margin-top: 25%;
+    }
+    .header .image img {
+        max-height: 200px;
+    }
+    .header h1 {
+        font-size: 60px;
+    }
+    .header h3 {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 769px) {
+    .header {
+        margin-top: 40px;
+    }
+    .header h3 {
+        margin-bottom: 0;
+    }
 }
 
 .media {
@@ -104,9 +205,58 @@ body {
     justify-content: space-between;
 }
 
+@media (min-width: 600px) {
+    .media {
+        position: absolute;
+        width: 60%;
+        bottom: 15%;
+        left: 20%;
+    }
+    .media p {
+        font-size: 28px;
+    }
+    .media .media-links {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
 .media .media-links i {
     font-size: 50px;
     color: var(--tertiary-color);
+}
+
+@media (min-width: 769px) {
+    .media {
+        position: initial;
+        height: 50%;
+        width: 40%;
+        margin: auto 0 auto auto;
+        padding: 20px 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .media p {
+        display: none;
+    }
+    .media .media-links {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .media .media-links a {
+        margin-bottom: 10px;
+    }
+    .media .media-links i {
+        transition: .3s all ease-in-out;
+    }
+    .media .media-links a:last-of-type,
+    .media .media-links i:last-of-type {
+        margin-bottom: 0;
+    }
+    .media .media-links a:hover i {
+        color: var(--primary-color);
+    }
 }
 
 .footer {
@@ -122,4 +272,10 @@ body {
 .footer p {
     font-size: 16px;
     color: var(--tertiary-color);
+}
+
+@media (min-width: 600px) {
+    .footer p {
+        font-size: 20px;
+    }
 }
