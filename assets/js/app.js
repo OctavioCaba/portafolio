@@ -24,7 +24,7 @@ form.addEventListener('submit', e => {
 
   $.ajax({
     type: 'POST',
-    url: 'http://localhost:3000/emailsend/',
+    url: 'https://quiet-hollows-22277.herokuapp.com/emailsend/',
     data: {
       "name": name,
       "email": email,
@@ -34,7 +34,7 @@ form.addEventListener('submit', e => {
   });
 
 
-  window.location.href = 'file:///C:/Octavio/Perfil%20Profesional/Portafolio/NUEVAVERSION/index.html';
+  window.location.href = 'https://octaviocaba.github.io/portafolio/index.html';
   alert('Email enviado correctamente');
   form.reset();
 });
