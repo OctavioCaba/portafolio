@@ -3089,7 +3089,8 @@ input, select, textarea {
 				#header.alt .logo img {
 					display: block;
 					margin: 0 auto;
-					max-width: 75%;
+					max-width: 15%;
+					filter: invert(89%) sepia(0%) saturate(679%) hue-rotate(126deg) brightness(104%) contrast(89%);
 				}
 
 		@media screen and (max-width: 1280px) {
