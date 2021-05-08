@@ -1,12 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400';
 
-/*
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -3103,6 +3097,10 @@ input, select, textarea {
 					padding: 6em 4em 3em 4em ;
 				}
 
+				#header.alt .logo img {
+					max-width: 20%;
+				}
+
 		}
 
 		@media screen and (max-width: 980px) {
@@ -3113,6 +3111,10 @@ input, select, textarea {
 
 				#header.alt {
 					padding: 5em 3em 2em 3em ;
+				}
+
+				#header.alt .logo img {
+					max-width: 25%;
 				}
 
 		}
@@ -3136,9 +3138,13 @@ input, select, textarea {
 					padding: 4em 2em 1em 2em ;
 				}
 
-					#header.alt h1 {
-						font-size: 2.5em;
-					}
+				#header.alt h1 {
+					font-size: 2.5em;
+				}
+
+				#header.alt .logo img {
+					max-width: 30%;
+				}
 
 		}
 
@@ -3152,17 +3158,25 @@ input, select, textarea {
 					padding: 4em 1.5em 1em 1.5em ;
 				}
 
+				#header.alt .logo img {
+					max-width: 40%;
+				}
+
 		}
 
 		@media screen and (max-width: 360px) {
+
+			#header.alt .logo img {
+				max-width: 35%;
+			}
 
 			#header {
 				padding: 2.5em 1em 0.1em 1em ;
 			}
 
-				#header.alt {
-					padding: 3.5em 1em 0.5em 1em ;
-				}
+			#header.alt {
+				padding: 3.5em 1em 0.5em 1em ;
+			}
 
 		}
 
@@ -3700,6 +3714,11 @@ input, select, textarea {
 		margin: 0 0 3em -2em;
 	}
 
+	#footer .alt,
+	#footer p {
+		color: #ffffff;
+	}
+
 		#footer > * {
 			width: calc(50% - 2em);
 			margin-left: 2em;
@@ -3800,4 +3819,5 @@ input, select, textarea {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
+	z-index: 2;
 }
